@@ -33,16 +33,34 @@ public class Usuario {
         return Usuario;
     }
 
+    public void setUsuario(String Usuario) {
+        this.Usuario = Usuario;
+    }
+
     public String getClave() {
         return Clave;
+    }
+
+    public void setClave(String Clave) {
+        this.Clave = Clave;
     }
 
     public boolean isActivo() {
         return Activo;
     }
-    
-    
-    
+
+    public void setActivo(boolean Activo) {
+        this.Activo = Activo;
+    }
+
+    public ArrayList<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(ArrayList<Usuario> usuarios) {
+        this.usuarios = usuarios;
+    }
+
     
     public void leerDatoscsv(String ruta) throws FileNotFoundException, IOException, CsvValidationException
     {
@@ -65,6 +83,16 @@ public class Usuario {
         {
             System.out.println(usuarios.get(i).getUsuario());
         }
+    }
+    
+    public boolean confirmarUsuario(String nombre, String contra)
+    {
+        for(int i = 0; i < usuarios.size(); i++)
+        {
+            if(usuarios.get(i).getUsuario().equals(nombre) && usuarios.get(i).getClave().equals(contra))
+                return true;
+        }
+        return false;
     }
     
 }
