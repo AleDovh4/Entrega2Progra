@@ -4,6 +4,12 @@
  */
 package Graficos;
 
+import com.Usuario;
+import com.opencsv.exceptions.CsvValidationException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author alexa
@@ -108,11 +114,22 @@ public class Sesion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(ntxt.getText().equals("aa")&& ctxt.getText().equals("123"))
+        
+        String nombre, contra;
+        nombre = ntxt.getText();
+        contra = ctxt.getText();
+        Usuario usuarios = new Usuario();
+        try {
+            usuarios.leerDatoscsv("C:\\Users\\alexa\\OneDrive\\Documentos\\NetBeansProjects\\Entrega_2\\asd.csv");
+        } catch (IOException | CsvValidationException ex) {
+            Logger.getLogger(Sesion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(usuarios.confirmarUsuario(nombre, contra))
         {
             Menu abrir = new Menu();
             abrir.setVisible(rootPaneCheckingEnabled);
         }
+        
             
     }//GEN-LAST:event_jButton1ActionPerformed
 
