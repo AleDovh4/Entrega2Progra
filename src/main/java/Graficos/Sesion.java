@@ -9,6 +9,7 @@ import com.opencsv.exceptions.CsvValidationException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,6 +43,8 @@ public class Sesion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         jLabel1.setText("Nombre");
 
         jLabel2.setText("Contraseña");
@@ -72,7 +75,7 @@ public class Sesion extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addComponent(ctxt, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                         .addComponent(ntxt)))
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +92,7 @@ public class Sesion extends javax.swing.JFrame {
                     .addComponent(ctxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -121,14 +124,14 @@ public class Sesion extends javax.swing.JFrame {
         Usuario usuarios = new Usuario(); 
         
         try {
-            usuarios.leerDatoscsv("C:\\Users\\Judi\\OneDrive\\Documentos\\NetBeansProjects\\Entrega2Progra\\asd.csv");
+            usuarios.leerDatoscsv("C:\\Users\\alexa\\OneDrive\\Documentos\\NetBeansProjects\\Entrega_2\\asd.csv");
         } catch (IOException | CsvValidationException ex) {
             Logger.getLogger(Sesion.class.getName()).log(Level.SEVERE, null, ex);
         }
         if(usuarios.confirmarUsuario(nombre, contra))
         {
-            MenuInterfaz abrir = new MenuInterfaz();
-            abrir.setVisible(rootPaneCheckingEnabled);
+            JOptionPane.showMessageDialog(null,"Ingreso Con Exito");
+            
         }  
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed

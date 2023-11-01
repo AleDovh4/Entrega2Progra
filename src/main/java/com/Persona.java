@@ -202,7 +202,6 @@ public class Persona {
             {
                 familiares.add(personita);
             }
-            
         }   
     }
     
@@ -268,18 +267,61 @@ public class Persona {
         }
     }
     
-    public void eliminarPersona(ArrayList<Persona>listaPersonas)
+    public void eliminarPersona(Persona lista, int opcion)
     {
+        ArrayList<Persona>listaPersonas= lista.getVoluntarios();
+        if(listaPersonas.isEmpty())
+        {
+            System.out.println("Imposible de eliminar lista vacia");
+            return;
+        }
+        Scanner entrada = new Scanner(System.in);
         
-                
+        String nombre, apellido, rut;
+        System.out.println("Ingrese el Nombre de la persona a eliminar");
+        nombre = entrada.nextLine();
+        System.out.println("Ingrese el Apellido la persona a eliminar");
+        apellido = entrada.nextLine();
+        System.out.println("Ingrese el Rut de la persona a eliminar");
+        rut= entrada.nextLine();
+        
+        for(int i = 0; i < listaPersonas.size(); i++)
+        {
+            if(listaPersonas.get(i).getNombre().equals(nombre) && listaPersonas.get(i).getApellido().equals(apellido) && listaPersonas.get(i).getRut().equals(rut));
+            listaPersonas.remove(i);
+        }
+        System.out.println("Eliminado con Exito");    
+    }
+    
+     public void eliminarPersona(Persona lista, char opcion)
+    {
+        ArrayList<Persona>listaPersonas= lista.getFamiliares();
+        if(listaPersonas.isEmpty())
+        {
+            System.out.println("Imposible de eliminar lista vacia");
+            return;
+        }
+        Scanner entrada = new Scanner(System.in);
+        
+        String nombre, apellido, rut;
+        System.out.println("Ingrese el Nombre de la persona a eliminar");
+        nombre = entrada.nextLine();
+        System.out.println("Ingrese el Apellido la persona a eliminar");
+        apellido = entrada.nextLine();
+        System.out.println("Ingrese el Rut de la persona a eliminar");
+        rut= entrada.nextLine();
+        
+        for(int i = 0; i < listaPersonas.size(); i++)
+        {
+            if(listaPersonas.get(i).getNombre().equals(nombre) && listaPersonas.get(i).getApellido().equals(apellido) && listaPersonas.get(i).getRut().equals(rut));
+            listaPersonas.remove(i);
+        }
+        System.out.println("Eliminado con Exito");
     }
     
     public void modificarPersona(ArrayList<Persona>listaPersonas)
     {
         
     }
-    
-    
-    
     
 }

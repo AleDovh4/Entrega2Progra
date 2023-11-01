@@ -31,7 +31,6 @@ public class Menu {
             opcion = entrada.nextInt();
             entrada.nextLine();
             
-        
             switch(opcion)
             {
                 case 0:
@@ -81,36 +80,40 @@ public class Menu {
                 } 
                 case 3:
                 {
-                    System.out.println("Ingrese 1 para Eliminar un Voluntario o 2 para Eliminar un Integrantes de familia. Ingrese 3 para salir al menu principal");
-                    opcion = entrada.nextInt();
                     do{
+                        System.out.println("Ingrese 1 para Eliminar un Voluntario o 2 para Eliminar un Integrantes de familia. Ingrese 3 para salir al menu principal");
+                        opcion = entrada.nextInt();
                         if(opcion == 3)
                             break;
                         if(opcion == 1)
                         {
-                            personita.eliminarPersona(personita.getVoluntarios());
+                            personita.eliminarPersona(personita, 1);
+                            opcion =3;
                         }
                         else if (opcion == 2)
                         {
-                            personita.eliminarPersona(personita.getFamiliares());
+                            personita.eliminarPersona(personita, 'a');
+                            opcion =3;
                         }
                     }while(opcion != 3);
                     break;
                 }
                 case 4:
                 {
-                    System.out.println("Ingrese 1 para Modificar un Voluntario o 2 para Modificar un Integrantes de Familia. Ingrese 3 para salir al menu principal");
-                    opcion = entrada.nextInt();
                     do{
+                        System.out.println("Ingrese 1 para Modificar un Voluntario o 2 para Modificar un Integrantes de Familia. Ingrese 3 para salir al menu principal");
+                        opcion = entrada.nextInt();
                         if(opcion == 3)
                             break;
                         if(opcion == 1)
                         {
                             personita.modificarPersona(personita.getVoluntarios());
+                            opcion=3;
                         }
                         else if (opcion == 2)
                         {
                             personita.modificarPersona(personita.getFamiliares());
+                            opcion=3;
                         }
                     }while(opcion != 3);
                     break;
@@ -125,7 +128,4 @@ public class Menu {
         }while(opcion != 0);
       
     }
-    
-    
-    
 }

@@ -18,7 +18,7 @@ public class Entrega_2 {
         abrir.iniciarPrograma();
         
         Persona personita = new Persona();
-        personita.leerDatostxt("C:\\Users\\Judi\\OneDrive\\Documentos\\NetBeansProjects\\Entrega2Progra\\personas.txt");
+        personita.leerDatostxt("C:\\Users\\alexa\\OneDrive\\Documentos\\NetBeansProjects\\Entrega_2\\personas.txt");
         Menu menu = new Menu();
         
         
