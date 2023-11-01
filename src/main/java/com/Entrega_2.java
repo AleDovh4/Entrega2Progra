@@ -14,9 +14,14 @@ public class Entrega_2 {
     public static void main(String[] args) throws IOException, FileNotFoundException, CsvValidationException {
         
         
-        Sesion abrir = new Sesion();
-        abrir.iniciarPrograma();
+        //Sesion abrir = new Sesion();
+        //abrir.iniciarPrograma();
+        
+        Persona personita = new Persona();
+        personita.leerDatostxt("C:\\Users\\Judi\\OneDrive\\Documentos\\NetBeansProjects\\Entrega2Progra\\personas.txt");
+        Menu menu = new Menu();
         
         
+        menu.respuestasOpciones(personita);
     }
 }

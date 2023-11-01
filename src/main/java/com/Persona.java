@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Persona {
@@ -23,7 +24,8 @@ public class Persona {
     private String debilidad;
     private boolean asignado;
     private String tipo;
-    private ArrayList<Persona>Personas;
+    private ArrayList<Persona>voluntarios;
+    private ArrayList<Persona>familiares;
    
     public Persona(String nombreApellido, String rut, int edad, double telefono, String mail, String direccion, String comuna, String region, String profesion, String debilidad, boolean asignado, String tipo) {
         String[] aux = nombreApellido.split(" ");
@@ -56,8 +58,9 @@ public class Persona {
         this.debilidad = "None";
         this.asignado = false;
         this.tipo = "None";
+        this.voluntarios = new ArrayList<Persona>();
+        this.familiares = new ArrayList<Persona>();
     }
-    
     
     
     // parse a int y boolean
@@ -165,17 +168,24 @@ public class Persona {
         this.tipo = tipo;
     }
 
-    public ArrayList<Persona> getPersonas() {
-        return Personas;
+    public ArrayList<Persona> getVoluntarios() {
+        return voluntarios;
     }
 
-    public void setPersonas(ArrayList<Persona> Personas) {
-        this.Personas = Personas;
+    public void setVoluntarios(ArrayList<Persona> voluntarios) {
+        this.voluntarios = voluntarios;
+    }
+
+    public ArrayList<Persona> getFamiliares() {
+        return familiares;
+    }
+
+    public void setFamiliares(ArrayList<Persona> familiares) {
+        this.familiares = familiares;
     }
     
     public void leerDatostxt(String ruta) throws FileNotFoundException, IOException
     {
-        this.Personas = new ArrayList<Persona>();
         File file = new File(ruta);
         BufferedReader br = new BufferedReader(new FileReader(file));
         String  st;
@@ -184,14 +194,92 @@ public class Persona {
         {
             aux = st.split(", ");
             Persona personita = new Persona( aux[0], aux[1],Integer.parseInt(aux[2]),Double.parseDouble(aux[3]),aux[4],aux[5],aux[6],aux[7],aux[8],aux[9],Boolean.parseBoolean(aux[10]),aux[11]);
-            Personas.add(personita);
+            if(personita.getTipo().equals("Voluntario"))
+            {
+                voluntarios.add(personita);
+            }
+            else
+            {
+                familiares.add(personita);
+            }
+            
         }   
     }
-    public void mostrarDatos()
+    
+    public void agregarPersona(int opcion)
     {
-        for(int i = 0; i<Personas.size();i++)
-        {
-            System.out.println(Personas.get(i).getNombre());
+        Scanner entrada = new Scanner(System.in);
+        Persona nuevaP= new Persona();
+        System.out.println("Ingrese el nombre: ");
+        nuevaP.setNombre(entrada.nextLine());
+        System.out.println("Ingrese el apellido: ");
+        nuevaP.setApellido(entrada.nextLine());
+        System.out.println("Ingrese rut: ");
+        nuevaP.setRut(entrada.nextLine());
+        System.out.println("Ingrese la edad: ");
+        nuevaP.setEdad(entrada.nextInt());
+        entrada.nextLine();
+        System.out.println("Ingrese el numero de telefono: ");
+        nuevaP.setTelefono(entrada.nextDouble());
+        entrada.nextLine();
+        System.out.println("Ingrese el correo: ");
+        nuevaP.setMail(entrada.nextLine());
+        System.out.println("Direccion: ");
+        nuevaP.setDireccion(entrada.nextLine());
+        System.out.println("Comuna: ");
+        nuevaP.setComuna(entrada.nextLine());
+        System.out.println("Region: ");
+        nuevaP.setRegion(entrada.nextLine());
+        switch (opcion) {
+            case 1:
+                System.out.println("Profesion o algo en lo que es bueno: ");
+                nuevaP.setProfesion(entrada.nextLine());
+                System.out.println("Lo que no puede/quiere hacer: ");
+                nuevaP.setDebilidad(entrada.nextLine());
+                nuevaP.setAsignado(false);
+                nuevaP.setTipo("Voluntario");
+                voluntarios.add(nuevaP);
+                break;
+            case 2:
+                nuevaP.setProfesion("null");
+                nuevaP.setDebilidad("null");
+                nuevaP.setAsignado(false);
+                nuevaP.setTipo("Familiar");
+                familiares.add(nuevaP);
+                break;
+            default:
+                return;
         }
     }
+    
+    public void mostrarDatos(ArrayList<Persona>listaPersonas)
+    {
+        if(!listaPersonas.isEmpty())
+        {
+            for(int i=0; i< listaPersonas.size();i++)
+            {
+                System.out.println("Nombre: "+ listaPersonas.get(i).getNombre()+" "+listaPersonas.get(i).getApellido());
+                System.out.println("Rut: "+ listaPersonas.get(i).getRut());
+                System.out.println("Edad: "+ listaPersonas.get(i).getEdad());
+                System.out.println("Correo Electronico: "+listaPersonas.get(i).getMail());
+                System.out.println("Region: "+listaPersonas.get(i).getRegion() +"|| Comuna: "+listaPersonas.get(i).getComuna()+"||Direccion: "+listaPersonas.get(i).getDireccion());
+                System.out.println("");
+            }
+        }
+    }
+    
+    public void eliminarPersona(ArrayList<Persona>listaPersonas)
+    {
+        
+                
+    }
+    
+    public void modificarPersona(ArrayList<Persona>listaPersonas)
+    {
+        
+    }
+    
+    
+    
+    
 }

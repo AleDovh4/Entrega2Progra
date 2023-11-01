@@ -118,19 +118,19 @@ public class Sesion extends javax.swing.JFrame {
         String nombre, contra;
         nombre = ntxt.getText();
         contra = ctxt.getText();
-        Usuario usuarios = new Usuario();
+        Usuario usuarios = new Usuario(); 
+        
         try {
-            usuarios.leerDatoscsv("C:\\Users\\alexa\\OneDrive\\Documentos\\NetBeansProjects\\Entrega_2\\asd.csv");
+            usuarios.leerDatoscsv("C:\\Users\\Judi\\OneDrive\\Documentos\\NetBeansProjects\\Entrega2Progra\\asd.csv");
         } catch (IOException | CsvValidationException ex) {
             Logger.getLogger(Sesion.class.getName()).log(Level.SEVERE, null, ex);
         }
         if(usuarios.confirmarUsuario(nombre, contra))
         {
-            Menu abrir = new Menu();
+            MenuInterfaz abrir = new MenuInterfaz();
             abrir.setVisible(rootPaneCheckingEnabled);
-        }
-        
-            
+        }  
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void iniciarPrograma()
