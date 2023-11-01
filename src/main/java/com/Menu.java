@@ -107,12 +107,12 @@ public class Menu {
                             break;
                         if(opcion == 1)
                         {
-                            personita.modificarPersona(personita.getVoluntarios());
+                            personita.modificarPersona(personita,opcion);
                             opcion=3;
                         }
                         else if (opcion == 2)
                         {
-                            personita.modificarPersona(personita.getFamiliares());
+                            personita.modificarPersona(personita, 'a');
                             opcion=3;
                         }
                     }while(opcion != 3);

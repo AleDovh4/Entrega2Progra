@@ -23,5 +23,6 @@ public class Entrega_2 {
         
         
         menu.respuestasOpciones(personita);
+        System.out.println("Finalizado");
     }
 }

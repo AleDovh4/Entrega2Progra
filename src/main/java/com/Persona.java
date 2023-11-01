@@ -277,18 +277,17 @@ public class Persona {
         }
         Scanner entrada = new Scanner(System.in);
         
-        String nombre, apellido, rut;
-        System.out.println("Ingrese el Nombre de la persona a eliminar");
-        nombre = entrada.nextLine();
-        System.out.println("Ingrese el Apellido la persona a eliminar");
-        apellido = entrada.nextLine();
+        String rut;
         System.out.println("Ingrese el Rut de la persona a eliminar");
         rut= entrada.nextLine();
         
         for(int i = 0; i < listaPersonas.size(); i++)
         {
-            if(listaPersonas.get(i).getNombre().equals(nombre) && listaPersonas.get(i).getApellido().equals(apellido) && listaPersonas.get(i).getRut().equals(rut));
-            listaPersonas.remove(i);
+            if(listaPersonas.get(i).getRut().equals(rut))
+            {
+                listaPersonas.remove(i);
+                break;
+            }
         }
         System.out.println("Eliminado con Exito");    
     }
@@ -303,25 +302,254 @@ public class Persona {
         }
         Scanner entrada = new Scanner(System.in);
         
-        String nombre, apellido, rut;
-        System.out.println("Ingrese el Nombre de la persona a eliminar");
-        nombre = entrada.nextLine();
-        System.out.println("Ingrese el Apellido la persona a eliminar");
-        apellido = entrada.nextLine();
+        String Rut;
         System.out.println("Ingrese el Rut de la persona a eliminar");
-        rut= entrada.nextLine();
+        Rut= entrada.nextLine();
         
         for(int i = 0; i < listaPersonas.size(); i++)
         {
-            if(listaPersonas.get(i).getNombre().equals(nombre) && listaPersonas.get(i).getApellido().equals(apellido) && listaPersonas.get(i).getRut().equals(rut));
-            listaPersonas.remove(i);
+            if(listaPersonas.get(i).getRut().equals(Rut))
+            {
+                listaPersonas.remove(i);
+                break;
+            }
         }
         System.out.println("Eliminado con Exito");
     }
     
-    public void modificarPersona(ArrayList<Persona>listaPersonas)
+    public void modificarPersona(Persona lista, int opcion)
     {
+        ArrayList<Persona>listaPersonas= lista.getVoluntarios();
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el rut de la persona");
+        String rutEntrada = entrada.nextLine();
+        String entry;
         
+        for(int i = 0; i < listaPersonas.size(); i++)
+        {
+            if(listaPersonas.get(i).getRut().equals(rutEntrada))
+            {
+                do
+                {
+                System.out.println(listaPersonas.get(i).getNombre());
+                System.out.println(listaPersonas.get(i).getRut());
+                System.out.println(rutEntrada);
+                System.out.println("Que desea modificar:)");
+                System.out.println("1)Nombre 2)Apellido 3)Rut 4)Edad 5)Telefono");
+                System.out.println("6)Mail 7)Direccion 8)Comuna 9)Region");
+                System.out.println("10)Profesion 11)Debilidad 0)SALIR");
+                opcion= entrada.nextInt();
+                entrada.nextLine();
+                if(opcion==0)
+                    break;
+                switch(opcion)
+                {
+                    case 0:
+                    {
+                        break;
+                    }
+                    case 1:
+                    {
+                        System.out.println("Ingrese el nombre modificado: ");
+                        entry= entrada.nextLine();
+                        listaPersonas.get(i).setNombre(entry);
+                        break;
+                    }
+                    case 2:
+                    {
+                        System.out.println("Ingrese el apellido modificado: ");
+                        entry= entrada.nextLine();
+                        listaPersonas.get(i).setApellido(entry);
+                        break;
+                    }
+                    case 3:
+                    {
+                        System.out.println("Ingrese el Rut modificado: ");
+                        entry= entrada.nextLine();
+                        listaPersonas.get(i).setRut(entry);
+                        break;
+                    }
+                    case 4:
+                    {
+                        System.out.println("Ingrese la edad modificada:");
+                        int entry2 = entrada.nextInt();
+                        entrada.nextLine();
+                        listaPersonas.get(i).setEdad(entry2);
+                        break;
+                    }
+                    case 5:
+                    {
+                        System.out.println("Ingrese el Telefono modificado:");
+                        double entry3 = entrada.nextDouble();
+                        entrada.nextLine();
+                        listaPersonas.get(i).setTelefono(entry3);
+                        break;
+                    }
+                    case 6:
+                    {
+                        System.out.println("Ingrese el Mail modificado: ");
+                        entry= entrada.nextLine();
+                        listaPersonas.get(i).setMail(entry);
+                        break;
+                    }
+                    case 7:
+                    {
+                        System.out.println("Ingrese la direccion modificada: ");
+                        entry= entrada.nextLine();
+                        listaPersonas.get(i).setDireccion(entry);
+                        break;
+                    }
+                    case 8:
+                    {
+                        System.out.println("Ingrese la comuna modificada: ");
+                        entry= entrada.nextLine();
+                        listaPersonas.get(i).setComuna(entry);
+                        break;
+                    }
+                    case 9:
+                    {
+                        System.out.println("Ingrese la Region modificada: ");
+                        entry= entrada.nextLine();
+                        listaPersonas.get(i).setRegion(entry);
+                        break;
+                    }
+                    case 10:
+                    {
+                        System.out.println("Ingrese la profesion modificada: ");
+                        entry= entrada.nextLine();
+                        listaPersonas.get(i).setProfesion(entry);
+                        break;
+                    }
+                    case 11:
+                    {
+                        System.out.println("Ingrese la debilidad modificada: ");
+                        entry= entrada.nextLine();
+                        listaPersonas.get(i).setDebilidad(entry);
+                        break;
+                    }
+                    default:
+                        System.out.println("Opcion No Valida");
+                        break;
+                }
+                }while(opcion!=0);
+            }
+        }
+    }
+    public void modificarPersona(Persona lista, char alternativa)
+    {
+        ArrayList<Persona>listaPersonas= lista.getVoluntarios();
+        int opcion;
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el rut de la persona");
+        String rutEntrada = entrada.nextLine();
+        String entry;
+        
+        for(int i = 0; i < listaPersonas.size(); i++)
+        {
+            if(listaPersonas.get(i).getRut().equals(rutEntrada))
+            {
+                do
+                {
+                    System.out.println("Que desea modificar:)");
+                    System.out.println("1)Nombre 2)Apellido 3)Rut 4)Edad 5)Telefono");
+                    System.out.println("6)Mail 7)Direccion 8)Comuna 9)Region");
+                    System.out.println("10)Profesion 11)Debilidad 0)SALIR");
+                    opcion= entrada.nextInt();
+                    entrada.nextLine();
+                    if(opcion==0)
+                        break;
+                    switch(opcion)
+                    {
+                        case 0:
+                        {
+                            break;
+                        }
+                        case 1:
+                        {
+                            System.out.println("Ingrese el nombre modificado: ");
+                            entry= entrada.nextLine();
+                            listaPersonas.get(i).setNombre(entry);
+                            break;
+                        }
+                        case 2:
+                        {
+                            System.out.println("Ingrese el apellido modificado: ");
+                            entry= entrada.nextLine();
+                            listaPersonas.get(i).setApellido(entry);
+                            break;
+                        }
+                        case 3:
+                        {
+                            System.out.println("Ingrese el Rut modificado: ");
+                            entry= entrada.nextLine();
+                            listaPersonas.get(i).setRut(entry);
+                            break;
+                        }
+                        case 4:
+                        {
+                            System.out.println("Ingrese la edad modificada:");
+                            int entry2 = entrada.nextInt();
+                            entrada.nextLine();
+                            listaPersonas.get(i).setEdad(entry2);
+                            break;
+                        }
+                        case 5:
+                        {
+                            System.out.println("Ingrese el Telefono modificado:");
+                            double entry3 = entrada.nextDouble();
+                            entrada.nextLine();
+                            listaPersonas.get(i).setTelefono(entry3);
+                            break;
+                        }
+                        case 6:
+                        {
+                            System.out.println("Ingrese el Mail modificado: ");
+                            entry= entrada.nextLine();
+                            listaPersonas.get(i).setMail(entry);
+                            break;
+                        }
+                        case 7:
+                        {
+                            System.out.println("Ingrese la direccion modificada: ");
+                            entry= entrada.nextLine();
+                            listaPersonas.get(i).setDireccion(entry);
+                            break;
+                        }
+                        case 8:
+                        {
+                            System.out.println("Ingrese la comuna modificada: ");
+                            entry= entrada.nextLine();
+                            listaPersonas.get(i).setComuna(entry);
+                            break;
+                        }
+                        case 9:
+                        {
+                            System.out.println("Ingrese la Region modificada: ");
+                            entry= entrada.nextLine();
+                            listaPersonas.get(i).setRegion(entry);
+                            break;
+                        }
+                        case 10:
+                        {
+                            System.out.println("Ingrese la profesion modificada: ");
+                            entry= entrada.nextLine();
+                            listaPersonas.get(i).setProfesion(entry);
+                            break;
+                        }
+                        case 11:
+                        {
+                            System.out.println("Ingrese la debilidad modificada: ");
+                            entry= entrada.nextLine();
+                            listaPersonas.get(i).setDebilidad(entry);
+                            break;
+                        }
+                        default:
+                            System.out.println("Opcion No Valida");
+                            break;
+                    }
+                }while(opcion!=0);
+            }
+        }
     }
     
 }
