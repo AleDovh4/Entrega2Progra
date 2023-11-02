@@ -1,6 +1,6 @@
-
+  
 package com;
-
+  
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import java.io.File;
@@ -11,14 +11,14 @@ import com.opencsv.exceptions.CsvValidationException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
+  
 public class Usuario {
     
     private String Usuario;
     private String Clave; 
     private boolean Activo;
     private ArrayList<Usuario>usuarios;
-
+  
     public Usuario(String Usuario, String Clave, boolean Activo) {
         this.Usuario = Usuario;
         this.Clave = Clave;

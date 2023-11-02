@@ -1,0 +1,30 @@
+Pedro Smith, 23456789-4, 60, 56945678901, pedro.smith@email.com, Calle E, Curicó, Maule, Arquitecto, No puede realizar reparaciones en el hogar, false, Voluntario
+Laura Sánchez, 12345678-9, 40, 56956789012, laura.sanchez@email.com, Calle F, Curicó, Maule, null, null, false, Familiar
+Manuel Torres, 98765432-1, 65, 56967890123, manuel.torres@email.com, Calle G, Curicó, Maule, null, null, false, Familiar
+Sofia Fernández, 45678901-2, 30, 56978901234, sofia.fernandez@email.com, Calle H, Curicó, Maule, null, null, false, Familiar
+Carolina Mendoza, 67890123-4, 32, 56945672345, carolina.mendoza@email.com, Calle L, Curicó, Maule, Enfermera, No puede cocinar, false, Voluntario
+Luis González, 78901234-5, 50, 56956783456, luis.gonzalez@email.com, Calle M, Curicó, Maule, Electricista, No puede hacer trabajos manuales, false, Voluntario
+Marta Pérez, 89012345-6, 28, 56967894567, marta.perez@email.com, Calle N, Curicó, Maule, Diseñador Gráfico, No puede conducir, false, Voluntario
+Javier Ramírez, 34567890-3, 55, 56989012345, javier.ramirez@email.com, Calle I, Curicó, Maule, null, null, false, Familiar
+Paula Gómez, 23456789-4, 48, 56990123456, paula.gomez@email.com, Calle J, Curicó, Maule, null, null, false, Familiar
+Andrés Rodríguez, 56789012-3, 42, 56934561234, andres.rodriguez@email.com, Calle K, Curicó, Maule, Psicólogo, No puede hablar en público, false, Voluntario
+Alberto Torres, 90123456-7, 60, 56978905678, alberto.torres@email.com, Calle O, Curicó, Maule, Profesor, No puede realizar reparaciones en el hogar, false, Voluntario
+Paula González, 22334455-6, 75, 56923456667, paula.gonzalez@email.com, Calle AA, Curicó, Maule, null, null, false, Familiar
+Alejandro Pérez, 33445566-7, 41, 56934567778, alejandro.perez@email.com, Calle BB, Curicó, Maule, null, null, false, Familiar
+Juan Pérez, 12345678-9, 35, 56912345678, juan.perez@email.com, Calle A, Curicó, Maule, Médico, No puede hablar en público, false, Voluntario
+María López, 98765432-1, 28, 56987654321, maria.lopez@email.com, Calle B, Curicó, Maule, Profesor, No puede hacer trabajos manuales, false, Voluntario
+Carlos González, 45678901-2, 45, 56923456789, carlos.gonzalez@email.com, Calle C, Curicó, Maule, Ingeniero, No puede conducir, false, Voluntario
+Ana Rodríguez, 34567890-3, 50, 56934567890, ana.rodriguez@email.com, Calle D, Curicó, Maule, Abogado, No puede cocinar, false, Voluntario
+Valeria Torres, 44556677-8, 56, 56945678889, valeria.torres@email.com, Calle CC, Curicó, Maule, null, null, false, Familiar
+Guillermo González, 55667788-9, 47, 56956789990, guillermo.gonzalez@email.com, Calle DD, Curicó, Maule, null, null, false, Familiar
+Rosa Sánchez, 11223344-5, 45, 56912341234, rosa.sanchez@email.com, Calle P, Curicó, Maule, null, null, false, Familiar
+Eduardo González, 22334455-6, 70, 56923452345, eduardo.gonzalez@email.com, Calle Q, Curicó, Maule, null, null, false, Familiar
+Claudia Silva, 77889900-1, 37, 56978901112, claudia.silva@email.com, Calle V, Curicó, Maule, Arquitecta, No puede cocinar, false, Voluntario
+Roberto Pérez, 88990011-2, 52, 56989012223, roberto.perez@email.com, Calle W, Curicó, Maule, Fontanero, No puede hacer trabajos manuales, false, Voluntario
+Natalia Martínez, 33445566-7, 38, 56934563456, natalia.martinez@email.com, Calle R, Curicó, Maule, null, null, false, Familiar
+Oscar Pérez, 44556677-8, 55, 56945674567, oscar.perez@email.com, Calle S, Curicó, Maule, null, null, false, Familiar
+Valentina Torres, 55667788-9, 48, 56956785678, valentina.torres@email.com, Calle T, Curicó, Maule, null, null, false, Familiar
+Diego Morales, 66778899-0, 29, 56967890001, diego.morales@email.com, Calle U, Curicó, Maule, Contador, No puede hablar en público, false, Voluntario
+Patricia González, 99001122-3, 45, 56990123334, patricia.gonzalez@email.com, Calle X, Curicó, Maule, Psicoterapeuta, No puede conducir, false, Voluntario
+Juanita Torres, 00112233-4, 61, 56901234445, juanita.torres@email.com, Calle Y, Curicó, Maule, Enfermera, No puede realizar reparaciones en el hogar, false, Voluntario
+Manuel Sánchez, 11223344-5, 50, 56912345556, manuel.sanchez@email.com, Calle Z, Curicó, Maule, null, null, false, Familiar
