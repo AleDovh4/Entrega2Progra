@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -63,7 +64,6 @@ public class Sesion extends javax.swing.JFrame {
         jLabel3.setText("Inicio de sesion");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 40));
 
-        txtUsuario.setBackground(new java.awt.Color(255, 255, 255));
         txtUsuario.setBorder(null);
         txtUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -72,7 +72,6 @@ public class Sesion extends javax.swing.JFrame {
         });
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 220, -1));
 
-        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setText("********");
         txtPassword.setBorder(null);
         txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -247,19 +246,22 @@ public class Sesion extends javax.swing.JFrame {
         Usuario usuarios = new Usuario(); 
 
         try {
-            usuarios.leerDatoscsv("src/test/java/users.csv");
+            usuarios.leerDatoscsv("C:\\Users\\alexa\\OneDrive\\Documentos\\NetBeansProjects\\Entrega_2\\Datos.csv");
         } catch (IOException | CsvValidationException ex) {
             Logger.getLogger(Sesion.class.getName()).log(Level.SEVERE, null, ex);
         }
         if(usuarios.confirmarUsuario(nombre, contra))
         {
-            lblMensaje.setText("Ingreso Con Exito");
+            //lblMensaje.setText("Ingreso Con Exito");
+            JOptionPane.showMessageDialog(null,"Ingreso Con Exito");
+            this.setVisible(false);
         }  
         else
         {
-            lblMensaje.setText("Datos Incorrectos");
+            //lblMensaje.setText("Datos Incorrectos");
+            JOptionPane.showMessageDialog(null,"Datos Erroneos");
         }
-        this.setVisible(false);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusLost

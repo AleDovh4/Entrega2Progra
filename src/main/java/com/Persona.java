@@ -253,6 +253,11 @@ public class Persona {
     
     public void mostrarDatos(ArrayList<Persona>listaPersonas)
     {
+        if(listaPersonas.isEmpty())
+        {
+            System.out.println("No existen Datos");
+            return;
+        }
         if(!listaPersonas.isEmpty())
         {
             for(int i=0; i< listaPersonas.size();i++)
@@ -280,16 +285,23 @@ public class Persona {
         String rut;
         System.out.println("Ingrese el Rut de la persona a eliminar");
         rut= entrada.nextLine();
+        boolean encontrado=false;
         
         for(int i = 0; i < listaPersonas.size(); i++)
         {
             if(listaPersonas.get(i).getRut().equals(rut))
             {
+                encontrado=true;
                 listaPersonas.remove(i);
                 break;
             }
         }
-        System.out.println("Eliminado con Exito");    
+        if(!encontrado)
+        {
+            System.out.println("Persona no encontrada, no es posible eliminar");
+            return;
+        }
+        System.out.println("Eliminado con Exito!");  
     }
     
      public void eliminarPersona(Persona lista, char opcion)
@@ -305,16 +317,23 @@ public class Persona {
         String Rut;
         System.out.println("Ingrese el Rut de la persona a eliminar");
         Rut= entrada.nextLine();
+        boolean encontrado=false;
         
         for(int i = 0; i < listaPersonas.size(); i++)
         {
             if(listaPersonas.get(i).getRut().equals(Rut))
             {
+                encontrado=true;
                 listaPersonas.remove(i);
                 break;
             }
         }
-        System.out.println("Eliminado con Exito");
+        if(!encontrado)
+        {
+            System.out.println("Persona no encontrada, no es posible eliminar");
+            return;
+        }
+        System.out.println("Eliminado con Exito!");  
     }
     
     public void modificarPersona(Persona lista, int opcion)
@@ -324,20 +343,28 @@ public class Persona {
         System.out.println("Ingrese el rut de la persona");
         String rutEntrada = entrada.nextLine();
         String entry;
+        boolean encontrado=false;
         
         for(int i = 0; i < listaPersonas.size(); i++)
         {
             if(listaPersonas.get(i).getRut().equals(rutEntrada))
             {
+                encontrado=true;
                 do
                 {
-                System.out.println(listaPersonas.get(i).getNombre());
-                System.out.println(listaPersonas.get(i).getRut());
-                System.out.println(rutEntrada);
                 System.out.println("Que desea modificar:)");
-                System.out.println("1)Nombre 2)Apellido 3)Rut 4)Edad 5)Telefono");
-                System.out.println("6)Mail 7)Direccion 8)Comuna 9)Region");
-                System.out.println("10)Profesion 11)Debilidad 0)SALIR");
+                System.out.println("1)Nombre");
+                System.out.println("2)Apellido");
+                System.out.println("3)Rut");
+                System.out.println("4)Edad");
+                System.out.println("5)Telefono");
+                System.out.println("6)Mail");
+                System.out.println("7)Direccion");
+                System.out.println("8)Comuna");
+                System.out.println("9)Region");
+                System.out.println("10)Profesion");
+                System.out.println("11)Debilidad");
+                System.out.println("0)Salir");
                 opcion= entrada.nextInt();
                 entrada.nextLine();
                 if(opcion==0)
@@ -434,6 +461,12 @@ public class Persona {
                 }while(opcion!=0);
             }
         }
+        if(!encontrado)
+        {
+            System.out.println("Persona no encontrada");
+            return;
+        }
+        System.out.println("Modificado con Exito!");
     }
     public void modificarPersona(Persona lista, char alternativa)
     {
@@ -443,17 +476,28 @@ public class Persona {
         System.out.println("Ingrese el rut de la persona");
         String rutEntrada = entrada.nextLine();
         String entry;
+        boolean encontrado=false;
         
         for(int i = 0; i < listaPersonas.size(); i++)
         {
             if(listaPersonas.get(i).getRut().equals(rutEntrada))
             {
+                encontrado=true;
                 do
                 {
                     System.out.println("Que desea modificar:)");
-                    System.out.println("1)Nombre 2)Apellido 3)Rut 4)Edad 5)Telefono");
-                    System.out.println("6)Mail 7)Direccion 8)Comuna 9)Region");
-                    System.out.println("10)Profesion 11)Debilidad 0)SALIR");
+                    System.out.println("1)Nombre");
+                    System.out.println("2)Apellido");
+                    System.out.println("3)Rut");
+                    System.out.println("4)Edad");
+                    System.out.println("5)Telefono");
+                    System.out.println("6)Mail");
+                    System.out.println("7)Direccion");
+                    System.out.println("8)Comuna");
+                    System.out.println("9)Region");
+                    System.out.println("10)Profesion");
+                    System.out.println("11)Debilidad");
+                    System.out.println("0)Salir");
                     opcion= entrada.nextInt();
                     entrada.nextLine();
                     if(opcion==0)
@@ -550,6 +594,12 @@ public class Persona {
                 }while(opcion!=0);
             }
         }
+        if(!encontrado)
+        {
+            System.out.println("Persona no encontrada");
+            return;
+        }
+        System.out.println("Modificado con Exito!");
     }
     
 }
